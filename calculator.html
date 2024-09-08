@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Calculator</h2>
+
+    <div class="num1">
+      <label for="first"> First </label>
+      <input type="number" name="first" id="first" />
+    </div>
+    <br />
+
+    <div class="num2">
+      <label for="second">Second</label>
+      <input type="number" name="second" id="second" />
+    </div>
+    <br />
+
+    <button onclick="SumOfTwoNumbers()">Result</button>
+    <br />
+    <br />
+    <span id="finalOutput"></span>
+
+    <script>
+      function SumOfTwoNumbers() {
+        let firstNumber = parseFloat(document.getElementById("first").value);
+        let secondNumber = parseFloat(document.getElementById("second").value);
+
+        if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+          let result = firstNumber + secondNumber;
+
+          document.getElementById("finalOutput").textContent =
+            "result: " + result;
+        } else {
+          document.getElementById("finalOutput").textContent =
+            "please Enter Number";
+        }
+      }
+    </script>
+  </body>
+</html>
